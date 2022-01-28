@@ -74,7 +74,7 @@
   <button class="btn btn-success" (click)="generateValues()">Generate Random Values</button>
 
   <div class="alert alert-info mt-5">
-    Encryption Algo: AES-GCM
+    Encryption Algo: AES-CBC
   </div>
 
   <table class="table table-responsive">
@@ -111,6 +111,16 @@
       <th>IV</th>
       <td class="">{{ ivBase64.length }}</td>
       <td class="">{{ ivBase64 }}</td>
+    </tr>
+    <tr>
+      <th>AES Key</th>
+      <td class="">{{ aesKeyBase64.length }}</td>
+      <td class="">{{ aesKeyBase64 }}</td>
+    </tr>
+    <tr>
+      <th>Private Key</th>
+      <td class="">{{ privateKeyBase64.length }}</td>
+      <td class="">{{ privateKeyBase64 }}</td>
     </tr>
     </tbody>
 

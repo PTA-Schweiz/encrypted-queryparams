@@ -5,7 +5,7 @@ Sample Application to test the final URL size when encrypting query params.
 The concept is as follows:
 
 1. Query Params are generated from the form field values
-2. the query string is encrypted using AES-GCM 
+2. the query string is encrypted using AES-CBC 
 3. The encrypted query string is then converted to base 64
 4. The AES key is wrapped using a RSA public key
 5. the resulting key is converted to base64
