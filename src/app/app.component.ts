@@ -34,7 +34,7 @@ export class AppComponent implements OnInit{
   constructor(private builder: FormBuilder) {
     faker.setLocale('es');
 
-    this.urlFormControl = new FormControl('https://localhost:4200');
+    this.urlFormControl = new FormControl('http://localhost:4200');
     this.publicKeyInput = new FormControl("-----BEGIN PUBLIC KEY-----\n" +
       "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4R9L578Mfy9QOKLY99pw\n" +
       "gyy47tFzGWocbJvTLjoUMBfi2fU1H8WKzp5FQtppkLn8/6YnE5icYhzEmT3vN+Q2\n" +
@@ -46,20 +46,20 @@ export class AppComponent implements OnInit{
       "-----END PUBLIC KEY-----");
 
     this.formGroup = builder.group({
-      gender: new FormControl(''),
+      salutation: new FormControl(''),
       firstName: new FormControl(''),
       lastName: new FormControl(''),
       street: new FormControl(''),
       postalCode: new FormControl(''),
       city: new FormControl(''),
-      addressLine1: new FormControl(''),
-      addressLine2: new FormControl(''),
+      line2: new FormControl(''),
+      line3: new FormControl(''),
       birthDate: new FormControl(''),
       nationality: new FormControl(''),
-      phone: new FormControl(''),
-      mobile: new FormControl(''),
-      email: new FormControl(''),
-      correspondenceLanguage: new FormControl(''),
+      phoneNumber: new FormControl(''),
+      mobileNumber: new FormControl(''),
+      emailAddress: new FormControl(''),
+      language: new FormControl(''),
     });
 
     window.crypto.subtle.importKey(
@@ -120,20 +120,20 @@ export class AppComponent implements OnInit{
 
   generateValues() {
     let values = {
-      gender: faker.name.gender(),
+      salutation: faker.name.gender(),
       firstName: faker.name.firstName(),
       lastName: faker.name.lastName(),
       street: faker.address.streetAddress(),
       postalCode: faker.address.zipCode(),
       city: faker.address.city(),
-      addressLine1: faker.address.secondaryAddress(),
-      addressLine2: faker.address.secondaryAddress(),
+      line2: faker.address.secondaryAddress(),
+      line3: faker.address.secondaryAddress(),
       birthDate: faker.date.past().toISOString(),
       nationality: faker.address.countryCode(),
-      phone: faker.phone.phoneNumber(),
-      mobile: faker.phone.phoneNumber(),
-      email: faker.internet.email(),
-      correspondenceLanguage: faker.locale,
+      phoneNumber: faker.phone.phoneNumber(),
+      mobileNumber: faker.phone.phoneNumber(),
+      emailAddress: faker.internet.email(),
+      language: faker.locale,
       externalId: '49038823'
     }
     this.formGroup.patchValue(values);

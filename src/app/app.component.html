@@ -9,8 +9,8 @@
   <h4 class="mt-5">Data Input</h4>
   <form [formGroup]="formGroup">
     <div class="form-group">
-      <label>gender</label>
-      <input type="text" class="form-control" formControlName="gender">
+      <label>salutation</label>
+      <input type="text" class="form-control" formControlName="salutation">
     </div>
     <div class="form-group">
       <label>lastName</label>
@@ -33,13 +33,13 @@
       <input class="form-control" type="text" formControlName="city">
     </div>
     <div class="form-group">
-      <label>addressLine1</label>
-      <input class="form-control" type="text" formControlName="addressLine1">
+      <label>line2</label>
+      <input class="form-control" type="text" formControlName="line2">
 
     </div>
     <div class="form-group">
-      <label>addressLine2</label>
-      <input class="form-control" type="text" formControlName="addressLine2">
+      <label>line3</label>
+      <input class="form-control" type="text" formControlName="line3">
 
     </div>
     <div class="form-group">
@@ -53,21 +53,21 @@
 
     </div>
     <div class="form-group">
-      <label>mobile</label>
-      <input class="form-control" type="text" formControlName="mobile">
+      <label>mobileNumber</label>
+      <input class="form-control" type="text" formControlName="mobileNumber">
 
     </div>
     <div class="form-group">
-      <label>phone</label>
-      <input class="form-control" type="text" formControlName="phone">
+      <label>phoneNumber</label>
+      <input class="form-control" type="text" formControlName="phoneNumber">
     </div>
     <div class="form-group">
-      <label>email</label>
-      <input class="form-control" type="text" formControlName="email">
+      <label>emailAddress</label>
+      <input class="form-control" type="text" formControlName="emailAddress">
     </div>
     <div class="form-group">
-      <label>correspondenceLanguage</label>
-      <input class="form-control" type="text" formControlName="correspondenceLanguage">
+      <label>language</label>
+      <input class="form-control" type="text" formControlName="language">
     </div>
   </form>
 
@@ -141,7 +141,7 @@
     </div>
   </form>
   <div class="alert alert-info mt-5">
-    Sample Request: <a href="{{ url }}">{{ url }}</a>
+    Sample Request: <a href="{{ url }}" target="_blank">{{ url }}</a>
   </div>
 
 </div>
