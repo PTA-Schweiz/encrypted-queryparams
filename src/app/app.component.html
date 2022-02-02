@@ -5,8 +5,8 @@
   </button>
 </nav>
 
-
 <div class="container">
+  <h4 class="mt-5">Data Input</h4>
   <form [formGroup]="formGroup">
     <div class="form-group">
       <label>gender</label>
@@ -73,8 +73,18 @@
 
   <button class="btn btn-success" (click)="generateValues()">Generate Random Values</button>
 
+  <h4 class="mt-5">Encryption Info</h4>
+
+  <form>
+    <div class="form-group">
+      <label>Public Key</label>
+      <textarea class="form-control" type="text" [formControl]="publicKeyInput" rows="9"></textarea>
+      <small class="form-text text-muted">Public key in PEM format See: <a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#subjectpublickeyinfo">SubjectPublicKeyInfo</a> </small>
+    </div>
+  </form>
+
   <div class="alert alert-info mt-5">
-    Encryption Algo: AES-CBC
+    Data Encryption Algo: AES-CBC
   </div>
 
   <table class="table table-responsive">
@@ -89,28 +99,12 @@
     <tr>
       <th>Query String</th>
       <td>{{ rawLength }}</td>
-      <td class="text-break">{{ queryString }}</td>
+      <td class="text-break">{{ dataString }}</td>
     </tr>
-    <tr>
-      <th>Base 64 without Encryption</th>
-      <td>{{ base64StringBeforeEncryption.length }}</td>
-      <td>{{ base64StringBeforeEncryption }}</td>
-    </tr>
-
     <tr>
       <th>Encrypted Base64</th>
       <td class="">{{ encryptedBase64.length }}</td>
       <td>{{ encryptedBase64 }}</td>
-    </tr>
-    <tr>
-      <th>Wrapped Encryption Key</th>
-      <td class="">{{ wrappedKeyBase64.length }}</td>
-      <td class="">{{ wrappedKeyBase64 }}</td>
-    </tr>
-    <tr>
-      <th>IV</th>
-      <td class="">{{ ivBase64.length }}</td>
-      <td class="">{{ ivBase64 }}</td>
     </tr>
     <tr>
       <th>AES Key</th>
@@ -118,9 +112,14 @@
       <td class="">{{ aesKeyBase64 }}</td>
     </tr>
     <tr>
-      <th>Private Key</th>
-      <td class="">{{ privateKeyBase64.length }}</td>
-      <td class="">{{ privateKeyBase64 }}</td>
+      <th>IV</th>
+      <td class="">{{ ivBase64.length }}</td>
+      <td class="">{{ ivBase64 }}</td>
+    </tr>
+    <tr>
+      <th>Wrapped Encryption Key</th>
+      <td class="">{{ wrappedKeyBase64.length }}</td>
+      <td class="">{{ wrappedKeyBase64 }}</td>
     </tr>
     </tbody>
 
@@ -133,7 +132,14 @@
     </tr>
     </thead>
   </table>
-
+  <hr>
+  <h4 class="mt-5">Sample URL</h4>
+  <form>
+    <div class="form-group">
+      <label>Orion VTR Url</label>
+      <input class="form-control" type="text" [formControl]="urlFormControl" >
+    </div>
+  </form>
   <div class="alert alert-info mt-5">
     Sample Request: <a href="{{ url }}">{{ url }}</a>
   </div>
