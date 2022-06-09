@@ -60,6 +60,7 @@ export class AppComponent implements OnInit{
       mobileNumber: new FormControl(''),
       emailAddress: new FormControl(''),
       language: new FormControl(''),
+      externalId1: new FormControl(''),
     });
 
     window.crypto.subtle.importKey(
@@ -134,7 +135,7 @@ export class AppComponent implements OnInit{
       mobileNumber: faker.phone.phoneNumber(),
       emailAddress: faker.internet.email(),
       language: faker.locale,
-      externalId: '49038823'
+      externalId1: '49038823'
     }
     this.formGroup.patchValue(values);
 
