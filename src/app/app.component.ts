@@ -67,7 +67,7 @@ export class AppComponent implements OnInit{
       "spki",
       this.convertPemToBinary(
         // This key should be loaded from server at https://vtr-api.orion.ch/api/v1/decryption/publickey
-        this.publicKeyInput.value),
+        this.publicKeyInput.value.replace(/\s/g, '')),
         {   //these are the algorithm options
           name: "RSA-OAEP",
           hash: {name: "SHA-256"}, //can be "SHA-1", "SHA-256", "SHA-384", or "SHA-512"
